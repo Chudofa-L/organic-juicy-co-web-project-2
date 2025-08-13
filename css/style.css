@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;900&family=PT+Sans&family=Secular+One&display=swap');
+
+/* 
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-weight: 400;
+  font-weight: 900;
+ */
+
+/* ----------------------common styles----------------------------- */
+
+/*  COLORS
+  green - #C4E86C
+  red - #FF4747 
+  orange - #FFB548
+  blue - #01BCB5
+  logo - #FC4A3D
+  footer - #2F2F2F
+*/
+
+:root {
+  --green: #C4E86C;
+  --red: #FF4747;
+  --orange: #FFB548;
+  --blue: #01BCB5;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* ---------------HEADER------------------- */
+
+.header {
+  display: grid;
+  /* grid-template-rows: max-content;
+  grid-template-columns: 1fr 1fr 100px;
+  grid-template-areas: "logo nav search"; */
+
+  grid-template: "logo nav search" max-content / 1fr 1fr 100px;
+  align-items: center;
+  justify-items: start;
+
+  padding: 20px 0;
+
+  text-transform: uppercase;
+
+  overflow: hidden;
+}
+
+.logo {
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  color: var(--red);
+  font-size: 24px;
+  line-height: 1;
+  
+  width: 150px;
+
+  grid-area: logo;
+  justify-self: end;
+}
+
+.header__nav {
+  grid-area: nav;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 10px;
+}
+
+.header__nav a {
+  padding: 15px;
+  transition: color .2s;
+  position: relative;
+  display: inline-block;
+}
+
+.header__nav a:hover, .logo:hover {
+  color: var(--blue);
+}
+
+.header__nav a:active {
+  color: #02817d;
+}
+
+.header__nav a::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 100%;
+
+  background-color: var(--blue);
+
+  position: absolute;
+  left: 15px;
+  bottom: -200%;
+
+  transition: bottom .6s, background-color .3s;
+}
+
+.header__nav a:hover::after {
+  bottom: -80%;
+}
+
+.header__nav a:active::after {
+  background-color: #14b0ab;
+}
+
+.search {
+  grid-area: search;
+}
+
+.search__icon{
+  transition: fill .3s;
+}
+
+.search__icon:hover {
+  fill: var(--blue);
+}
+
+.search__icon:active {
+  fill: #13a09b;
+}
+
