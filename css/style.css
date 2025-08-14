@@ -406,6 +406,7 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  transition: opacity .2s;
 }
 
 .orang__arrow:hover {
@@ -416,3 +417,142 @@ body {
   opacity: 0.6;
 }
 
+.wrapper-down {
+  display: grid;
+  grid-template: 'footer sidebar' 1fr / 4.5fr 1.5fr;
+}
+
+/* -----------FOOTER-------------------- */
+
+.footer {
+  padding-top: 80px;
+
+  grid-area: footer;
+
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  grid-template-rows: max-content 100px; */
+  grid-template: '. socials form logo' max-content
+    '. . . copy' 100px / 1fr 1fr 1.5fr 1fr;
+  align-items: end;
+  align-content: center;
+
+  background-color: #2F2F2F;
+
+  color: #fff;
+}
+
+.socials {
+  grid-area: socials;
+
+  display: flex;
+  gap: 10px;
+}
+
+.socials__link {
+  border: 2px solid #fff;
+  border-radius: 50px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity .2s;
+}
+
+.socials__img {
+  width: 20px;
+  height: 20px;
+}
+
+.socials__link:hover {
+  opacity: .8;
+}
+
+.socials__link:active {
+  opacity: .6;
+}
+
+.form {
+  grid-area: form;
+  text-transform: uppercase;
+}
+
+.form__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.form__row {
+  display: flex;
+}
+
+.form__input {
+  height: 40px;
+  width: 200px;
+  padding: 0 20px;
+
+  text-transform: uppercase;
+
+  color: black;
+
+  background-color: #ffffffaf;
+}
+
+.form__input:focus {
+  background-color: #fff;
+}
+
+.form__submit-btn {
+  height: 40px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  background-color: var(--blue);
+
+  transition: background-color .2s;
+}
+
+.form__submit-btn:hover {
+  background-color: var(--red);
+}
+
+.form__submit-btn:active {
+  background-color: #db3d3d;
+}
+
+.footer__img {
+  grid-area: logo;
+  width: 70px;
+
+  justify-self: center;
+}
+
+.copy {
+  grid-area: copy;
+  color: #6a6a6a;
+  align-self: center;
+  justify-self: center;
+}
+
+/* -----------------------sidebar---------------------- */
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--blue);
+}
+
+.sidebar p + .btn {
+  margin-top: 20px;
+}
+
+.btn--rounder {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 25px;
+}
