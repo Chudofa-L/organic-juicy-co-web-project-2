@@ -25,10 +25,10 @@
 */
 
 :root {
-  --green: #C4E86C;
-  --red: #FF4747;
-  --orange: #FFB548;
-  --blue: #01BCB5;
+  --green: #BEE163;
+  --red: #FF494B;
+  --orange: #FFBA4A;
+  --blue: #00C2BA;
 }
 
 body {
@@ -37,10 +37,10 @@ body {
   font-size: 14px;
 }
 
-.container {
+/* .container {
   max-width: 1920px;
   margin: 0 auto;
-}
+} */
 
 .btn {
   text-transform: uppercase;
@@ -71,7 +71,7 @@ body {
   grid-template-columns: 1fr 1fr 100px;
   grid-template-areas: "logo nav search"; */
 
-  grid-template: "logo nav search" max-content / 1fr 1fr 100px;
+  grid-template: ". logo nav search" max-content / 2fr 1fr 2.5fr 0.5fr;
   align-items: center;
   justify-items: start;
 
@@ -92,11 +92,11 @@ body {
   width: 150px;
 
   grid-area: logo;
-  justify-self: end;
 }
 
 .header__nav {
   grid-area: nav;
+  transform: translateX(-15px);
 }
 
 .header__nav ul {
@@ -212,8 +212,8 @@ body {
   border: 2px solid #fff;
   border-radius: 50%;
 
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 
   transition: opacity .2s, background-color .3s;
 }
@@ -292,18 +292,94 @@ body {
   border: 1px solid #fff;
 }
 
+/* --------------article------------- */
+
+.common {
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+  padding: 30px;
+}
+
+.title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+
+  width: 140px;
+}
+
+.title span {
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  display: block;
+}
+
+.title span::first-line {
+  font-weight: 900;
+}
+
+.common__desc {
+  max-width: 60%;
+  hyphens: auto;
+}
+
+/* ---------------FRESHY----------------------------- */
+
+.freshy {
+  grid-area: freshy;
+  background-color: var(--green);
+}
+
+/* ---------------------------healthy------------------------ */
+
 .healthy {
   grid-area: healthy;
   background-color: var(--red);
+
+  padding-bottom: 85px;
 }
+
+.healthy .common__desc {
+  min-width: 140px;
+}
+
+.common--colomn-revers {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+
+/* -------------------------thirsty--------------------- */
 
 .thirsty {
   grid-area: thirsty;
   background-color: var(--orange);
 }
 
+.thirsty .common__desc {
+  max-width: 200px;
+}
+
+.common--revers {
+  flex-direction: row-reverse;
+}
+
+.common--revers .common__desc {
+  text-align: right;
+}
+
+/* --------------orange--------------------------- */
+
 .orange {
   grid-area: oranges;
+
+  position: relative;
 }
 
 .orange img {
@@ -311,11 +387,32 @@ body {
   height: 100%;
 
   filter: brightness(90%);
+}
+
+.orange__btn-wrapper {
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.freshy {
-  grid-area: freshy;
-  background-color: var(--green);
+.orang__arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
+
+.orang__arrow:hover {
+  opacity: 0.8;
+}
+
+.orang__arrow:active {
+  opacity: 0.6;
+}
+
