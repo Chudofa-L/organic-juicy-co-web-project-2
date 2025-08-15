@@ -291,6 +291,12 @@ body {
   border: 1px solid #fff;
 }
 
+.slider-arrows__items,
+.slider-dots__items {
+  width: 100%;
+  height: 100%;
+}
+
 /* --------------article------------- */
 
 .common {
@@ -590,12 +596,6 @@ body {
     height: 300px;
   }
 
-  .slider-arrows__items,
-  .slider-dots__items {
-    width: 100%;
-    height: 100%;
-  }
-
   .wrapper-down {
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -725,4 +725,123 @@ body {
   p.copy {
     font-size: 12px;
   }
+}
+
+
+/* -------------Бургер меню----------------- */
+
+.menu-icon {
+  width: 40px;
+  height: 30px;
+
+  position: relative;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: 0;
+
+  transition: transform .3s, top .3s .3s;
+}
+
+.menu-icon::after {
+  bottom: 0;
+
+  transition: transform .3s, bottom .3s .3s;
+}
+
+.menu-icon__line,
+.menu-icon::after,
+.menu-icon::before {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+}
+
+.menu-icon--active .menu-icon__line {
+  display: none;
+}
+
+.menu-icon--active::before {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+
+  transition: top .3s, transform .3s .3s;
+}
+
+.menu-icon--active::after {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
+
+  transition: bottom .3s, transform .3s .3s;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: repeat(2, max-content);
+    grid-template-areas: "logo menu-icon";
+  }
+
+  .search {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    grid-area: menu-icon;
+
+    /* justify-self: end; */
+  }
+
+  .header--mobile {
+    min-height: 100vh;
+
+    grid-template: 'logo menu-icon' max-content
+      'nav nav' max-content
+      'search search' max-content;
+    align-content: space-between;
+    justify-items: center;
+  }
+
+  .header--mobile .search,
+  .header--mobile .header__nav {
+    display: block;
+  }
+
+  .header__nav {
+    transform: none;
+  }
+
+  .header__nav ul {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .header__nav a::after {
+    display: none;
+  }
+
+  .header__nav a {
+    padding: 10px 20px;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
 }
