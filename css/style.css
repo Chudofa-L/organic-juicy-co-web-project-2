@@ -297,11 +297,11 @@ body {
   height: 100%;
 }
 
-  .slider-arrows,
-  .slider-dots,
-  .orange {
-    height: 400px;
-  }
+.slider-arrows,
+.slider-dots,
+.orange {
+  height: 400px;
+}
 
 /* --------------article------------- */
 
@@ -852,7 +852,8 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.slider-arrows__items, .slider-dots__items {
+.slider-arrows__items,
+.slider-dots__items {
   animation: fade 1s;
 }
 
@@ -860,6 +861,7 @@ button {
   0% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
